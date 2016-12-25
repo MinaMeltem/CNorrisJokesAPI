@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.c4q.chucknorrisjokes.model.Jokes;
 import com.example.c4q.chucknorrisjokes.network.ChuckNorrisApi;
+import com.example.c4q.chucknorrisjokes.network.ChuckNorrisClient;
 
 import java.io.IOException;
 
@@ -40,8 +41,9 @@ public class JokesResponseActivity extends AppCompatActivity {
 
     public void loadJoke() {
 
+        ChuckNorrisApi api = ChuckNorrisClient.createService(ChuckNorrisApi.class);
 
-        Call<Jokes> jokeCall = ChuckNorrisApi.getRandomJoke();
+        Call<Jokes> jokeCall = api.getRandomJoke();
 
         jokeCall.enqueue(new Callback<Jokes>() {
             @Override
