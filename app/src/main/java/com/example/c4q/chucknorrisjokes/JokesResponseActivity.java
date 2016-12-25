@@ -17,7 +17,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class JokesResponse extends AppCompatActivity {
+public class JokesResponseActivity extends AppCompatActivity {
     private static final String TAG = "ChuckNorrisActivity";
     private Button jokeGeneratorBTN;
     private TextView jokeDisplayerTV;
@@ -63,12 +63,11 @@ public class JokesResponse extends AppCompatActivity {
                     Log.e(TAG, e.getMessage());
                 }
             }
-
             @Override
             public void onFailure(Call<Jokes> call, Throwable t) {
                 Log.d("Error", t.getMessage());
                 // Show a failure message to the user.
-                Toast.makeText(JokesResponse.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(JokesResponseActivity.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
 
             }
         });
